@@ -5,7 +5,7 @@ var registration = (function (module) {
 
 	module.submitRegistration = function () {
 		$.ajax({
-				url: 'http://localhost:3000/users',
+				url: 'http://bobs-bagels-api.herokuapp.com/users',
 				type: 'POST',
 				data: {user: {
 				first_name: $('#first-name').val(),
@@ -61,7 +61,7 @@ var registration = (function (module) {
 
 	module.submitLogin = function (event) {
 		$.ajax({
-				url: 'http://localhost:3000/users/sign_in',
+				url: 'http://bobs-bagels-api.herokuapp.com/users/sign_in',
 				type: 'POST',
 				data: {email: $('#email').val(), password: $('#password').val()},
 			}).done(registration.loginSuccess).fail(registration.acceptFailure);
