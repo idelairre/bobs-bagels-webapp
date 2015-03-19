@@ -67,7 +67,7 @@ var order = (function (module) {
 //	var returnCustomerStatus = payment.getReturnCustomerStatus();
 
     $.ajax({
-      url: 'http://localhost:3000/users/' + localStorage["authToken"] + '/orders',
+      url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage["authToken"] + '/orders',
       type: 'POST',
       data: {
         order:{

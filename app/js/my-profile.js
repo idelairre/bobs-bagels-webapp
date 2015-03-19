@@ -22,7 +22,7 @@ var profile = (function (module){
   module.getOrders = function(user_id){
     // debugger;
     $.ajax({
-      url: 'http://localhost:3000/users/' + localStorage['authToken'],
+      url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage['authToken'],
       type: 'GET',
       dataType: 'JSON'
     }).done(indexOrderHistory)
@@ -71,8 +71,8 @@ var profile = (function (module){
 
   module.getAjax = function(user_id){
         $.ajax({
-          // url: 'http://localhost:3000/users/' + localStorage['authToken'],
-          url: 'http://localhost:3000/users/' + user_id,
+          // url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage['authToken'],
+          url: 'http://bobs-bagels-api.herokuapp.com/users/' + user_id,
           type: 'PATCH',
           dataType: 'JSON',
           data:
@@ -100,7 +100,7 @@ var profile = (function (module){
 
  module.init = function(){
     $.ajax({
-    url: 'http://localhost:3000/users/' + localStorage['authToken'],
+    url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage['authToken'],
     type: 'GET',
     dataType: 'JSON'
     })
@@ -159,7 +159,7 @@ var profile = (function (module){
 
 	module.getCustomerInfo = function () {
 		$.ajax({
-			url: 'http://localhost:3000/users/retrieve_card',
+			url: 'http://bobs-bagels-api.herokuapp.com/users/retrieve_card',
 			type: 'POST',
 			data: {
 				user: {
