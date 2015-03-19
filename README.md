@@ -11,5 +11,21 @@
 - users can customize sandwiches by adding items (increasing the price) or removing items (not affecting the price)
 - users can pay by credit card (via the Stripe API)
 
-## GitHub Workflow
-![GitHub Workflow](GitHub_Workflow.jpg)
+## Checkout Process
+![Checkout Process](Checkout_Process_stiched.jpg)
+
+
+## Models - ERD (Entity Relationship Diagrams)
+![Models ERD](Models_ERD.JPG)
+
+
+
+## Initial GitHub Workflow
+![Initial GitHub Workflow](GitHub_Workflow.jpg)
+
+## GitHub Workflow with API Deployment Process
+![Deployment GitHub Workflow](Deployment_Process.JPG)
+
+## Project Documentation
+[Project Documentation](https://docs.google.com/document/d/1tiphkFy_W58ioYVDvyYR1U1YO5Sptzc-Jd03a2EBRR0/edit?usp=sharing)
+
