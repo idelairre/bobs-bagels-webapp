@@ -16,7 +16,7 @@
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
-	<!-- build:js scripts/vendor/modernizr.js -->
+	<!-- build:js js/vendor/modernizr.js -->
 	<script src="bower_components/modernizr/modernizr.js"></script>
 	<!-- endbuild -->
   <!-- Google Font -->
@@ -102,7 +102,7 @@
 
 
 
-    <!-- build:js(.) scripts/vendor.js -->
+    <!-- build:js(.) js/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
@@ -126,7 +126,9 @@
     <script src="bower_components/mocha/mocha.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+
+    <!-- build:js({app,.tmp}) js/main.js -->
     <script src="js/menu.js" type="text/javascript"></script>
     <script src="js/router.js" type="text/javascript"></script>
     <script src="js/payment.js" type="text/javascript"></script>
@@ -136,7 +138,10 @@
     <script src="js/alacart.js" type="text/javascript"></script>
     <script src="js/catering.js" type="text/javascript"></script>
     <script src="js/my-profile.js" type="text/javascript"></script>
-     <script type="text/javascript"
+    <!-- endbuild -->
+
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript"
      src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
     </script>
     <script type="text/javascript"
@@ -148,6 +153,9 @@
     <script type="text/javascript"
      src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
     </script>
+
+
+
     <script type="text/x-handlebars-template" id='menu-info'>
 
     <div class="row">
@@ -457,8 +465,7 @@
 			ga('send', 'pageview');
 		</script>
 
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<!-- endbuild -->
+
 </body>
 
 </html>
