@@ -4,19 +4,28 @@ var router = (function (module) {
 
   module.host = "http://localhost:3000";
 
+  module.normalizeNav = function(){
+    if (localStorage['authToken'] == undefined){
+      $('.signed-in').hide();
+    } else {
+      $('.signed-out').hide();
+    };
+  };
+
   var Router = Backbone.Router.extend({
     routes: {
       '':'home',
       'home': 'home',
       'payments': 'payments',
       'delivery-options': 'deliveryOptions',
-	  'registration': 'registration',
-	  'login': 'login',
+	    'registration': 'registration',
+	    'login': 'login',
       'catering': 'catering',
       'my-profile': 'myProfile',
       'order-history': 'orderHistory',
       'about': 'about',
-	  'user-payments': 'userPayments',
+      'logout': 'logout',
+	    'user-payments': 'userPayments',
       'cart': 'cart'
     },
     home: function(){
@@ -34,6 +43,11 @@ var router = (function (module) {
     deliveryOptions: function(){
       $('#content').empty().load('partials/order-time-form.html');
       order.init();
+    },
+    logout: function(){
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('customerId');
+      location.href = '/';
     },
 	  registration: function(){
 	    $('#content').empty().load('partials/registration-form.html');
@@ -78,6 +92,7 @@ var router = (function (module) {
     }
   });
 
+
   module.router = new Router();
 
   module.backbone = function(){
@@ -91,4 +106,5 @@ var router = (function (module) {
 
 $(document).ready(function(){
   router.backbone();
+  router.normalizeNav();
 });

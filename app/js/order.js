@@ -85,8 +85,20 @@ var order = (function (module) {
     }).done(function(data){
       cart.cartReset();
       renderOrderSummary(data);
+      getCustomerId();
     }).fail(function (jqXHR, textStatus, errorThrown) {
       console.log(jqXHR, textStatus, errorThrown);
+    });
+  };
+
+  getCustomerId = function(){
+    $.ajax({
+      url: 'http://localhost:3000/users/' + localStorage["authToken"],
+      type: 'GET',
+      dataType: 'JSON'
+    })
+    .done(function(data){
+      localStorage.setItem('customerId', data[0].customer_id);
     });
   };
 
@@ -126,7 +138,7 @@ var order = (function (module) {
     $('#content').on('click', '#delivery-submit', function(event){
       event.preventDefault();
       deliveryValidation();
-	  cart.renderDetailedCart();
+	  // cart.renderDetailedCart();
     });
 
     $('#content').on('click', '#payment-submit', function(event){
@@ -139,7 +151,6 @@ var order = (function (module) {
   	});
   $('#content').on('click', '#decline', function(event){
     event.preventDefault();
-    debugger;
     location.href = "/#/payments";
     });
   };
