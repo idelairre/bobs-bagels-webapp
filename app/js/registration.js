@@ -21,6 +21,37 @@ var registration = (function (module) {
 		return false;
 	};
 
+	// var registrationValidation = function(){
+ //    var $form = $('#registration-form');
+ //    var validPhone = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+ //    var validAddress = /^\s*\S+(?:\s+\S+){2}/;
+ //    var validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+ //    var validName = /^[a-z ,.'-]+$/i;
+
+ //              	debugger;
+ //      if(order.zips.indexOf($('#address_zipcode').val()) > -1) {
+ //        if (validPhone.test($('#phone_number').val())) {
+ //          if (validAddress.test($('#address_1').val())) {
+ //          	if (validName.text($('#first-name').val())){
+ //          		if (validName.text($('#last-name').val())){
+ //          				registration.submitRegistration();
+ //          		} else {
+ //          				$form.find('.registration-errors').text("You must enter a valid last name.");
+ //          		};
+ //          	} else {
+ //          			$form.find('.registration-errors').text("You must enter a valid first name.");
+ //          	};
+ //          } else {
+ //             $form.find('.registration-errors').text("You must enter a valid address.");
+ //          };
+ //        } else {
+ //        $form.find('.registration-errors').text("You must enter a valid phone number.");
+ //        };
+ //      } else {
+ //        $form.find('.registration-errors').text("You must be desperate for bagels. We don't deliver that far!");
+ //      };
+ //  };
+
 	module.loginSuccess = function (userData) {
 		localStorage.setItem('authToken', userData.token);
     	localStorage.setItem('customerId', userData.customer_id);
@@ -60,7 +91,7 @@ var registration = (function (module) {
 
 		$('#content').on('click', '#registration-submit', function(event){
 			event.preventDefault();
-			registration.submitRegistration();
+			registrationValidation();
 		});
 
 		$('#content').on('submit', '#login-form', function(event){
