@@ -93,7 +93,7 @@ var order = (function (module) {
 
   getCustomerId = function(){
     $.ajax({
-      url: 'http://localhost:3000/users/' + localStorage["authToken"],
+      url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage["authToken"],
       type: 'GET',
       dataType: 'JSON'
     })
