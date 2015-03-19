@@ -20,7 +20,6 @@ var profile = (function (module){
   }; // end module.handleForm
 
   module.getOrders = function(user_id){
-    // debugger;
     $.ajax({
       url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage['authToken'],
       type: 'GET',

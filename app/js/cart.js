@@ -111,7 +111,7 @@ var cart = (function (module) {
 
   module.init = function(){
 
-    $('#content').off().on('submit', 'form', function(event){
+    $('#content').off().on('submit', '.menu-form', function(event){
       event.preventDefault();
       addItem($(this));
     });
