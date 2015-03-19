@@ -11,11 +11,10 @@ var payment = (function (module) {
 //	};
 
 	module.paymentType = function () {
-		if (localStorage['customerId'] != "undefined") {
-			location.href = '/#/user-payments';
-//			debugger;
-		} else {
+		if ((localStorage['customerId'] == undefined) || (localStorage['customerId'] == null)) {
 			location.href = '/#/payments';
+		} else {
+			location.href = '/#/user-payments';
 		};
 	};
 
