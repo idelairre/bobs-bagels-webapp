@@ -2,7 +2,7 @@
 
 var router = (function (module) {
 
-  module.host = "http://localhost:3000";
+  module.host = "http://bobs-bagels-api.herokuapp.com";
 
   var Router = Backbone.Router.extend({
     routes: {
