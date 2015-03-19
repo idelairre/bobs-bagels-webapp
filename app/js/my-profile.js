@@ -1,4 +1,4 @@
-var profile = (function (module){
+  var profile = (function (module){
 
   module.handleForm = function(user_id){
       console.log('inside handleForm, user id is: ' + user_id);

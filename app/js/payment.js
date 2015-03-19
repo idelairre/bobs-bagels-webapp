@@ -11,7 +11,7 @@ var payment = (function (module) {
 //	};
 
 	module.paymentType = function () {
-		if ((localStorage['customerId'] == undefined) || (localStorage['customerId'] == null)) {
+		if ((localStorage['customerId'] == undefined) || (localStorage['customerId'] == "undefined") || (localStorage['customerId'] == null)) {
 			location.href = '/#/payments';
 		} else {
 			location.href = '/#/user-payments';

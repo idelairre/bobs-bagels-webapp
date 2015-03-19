@@ -40,7 +40,7 @@ var order = (function (module) {
 
   var loginValidation = function(){
     var $form = $('#date-time-form');
-    if (localStorage["authToken"] == undefined ) {
+    if ((localStorage["authToken"] == undefined ) || (localStorage['authToken'] == "undefined")) {
       $form.find('.delivery-errors').text("You must be logged in to make a purchase");
     } else {
       cartValidation();
@@ -93,7 +93,7 @@ var order = (function (module) {
 
   getCustomerId = function(){
     $.ajax({
-      url: 'http://localhost:3000/users/' + localStorage["authToken"],
+      url: 'http://bobs-bagels-api.herokuapp.com/users/' + localStorage["authToken"],
       type: 'GET',
       dataType: 'JSON'
     })
@@ -135,16 +135,17 @@ var order = (function (module) {
       $('#delivery-add').empty();
     });
 
-    $('#content').on('click', '#delivery-submit', function(event){
+  $('#content').on('click', '#delivery-submit', function(event){
       event.preventDefault();
       deliveryValidation();
 	  // cart.renderDetailedCart();
-    });
+  });
 
-    $('#content').on('click', '#payment-submit', function(event){
+  $('#content').unbind('submit').bind('submit', '#payment-form', function(event){
       event.preventDefault();
       payment.cardPay();
-    });
+  });
+
 	$('#content').on('click', '#user-pay', function(event){
 		event.preventDefault();
 		order.submitOrder();
