@@ -363,44 +363,41 @@
 
 		<script type="text/x-handlebars-template" id='user-pay-render'>
 			<div>
+        <h2>Credit Cards</h2>
 				{{#each data}}
-					<li>name: {{name}}</li>
-					<li>address: {{address_line1}}
-						<br> {{address_line2}}
-					</li>
-					<li>city: {{address_city}}</li>
-					<li>zip: {{address_zip}}</li>
-					<li>brand: {{brand}}</li>
-					<li>expiration date: {{exp_month}}/{{exp_year}}</li>
-					<li>type: {{type}}</li>
-					<li>card number: **** **** **** {{last4}}</li>
+					<h4>expiration date: {{exp_month}}/{{exp_year}}</h4>
+					<h4>type: {{type}}</h4>
+					<h4>card number: **** **** **** {{last4}}</h4>
 				<button type="submit" id="delete_card">delete this card</button>
 				{{/each}}
-				<br>
-				<button type="submit" id="add_card">add card</button>
 				</br>
 			</div>
+      <br>
+      <h2>New Card?</h2>
+
       <form id="add-card-form">
         <span class="payment-errors"></span>
           <div class="form-row">
             <label>
               <span>Card Number</span>
-              <input type="text" size="20" id="number" />
+              <input type="text" class="form-control" size="20" id="number" />
             </label>
           </div>
           <div class="form-row">
             <label>
               <span>CVC</span>
-              <input type="text" size="4" id="cvc" />
+              <input type="text" class="form-control" size="4" id="cvc" />
             </label>
           </div>
-          <div class="form-row">
+          <div class="form-group">
             <label>
-              <span>Expiration (MM/YYYY)</span>
-              <input type="text" size="2" id="exp-month" />
+              <span>Expiration (MM)</span>
+              <input type="text" class="form-control" size="2" id="exp-month" />
             </label>
-            <span> / </span>
-            <input type="text" size="4" id="exp-year" />
+            <label>
+              <span>(YYYY)</span>
+                <input type="text" size="4" class="form-control" id="exp-year" />
+            </label>
           </div>
           <button type="submit" id="submit-card">Submit Card</button>
       </form>
