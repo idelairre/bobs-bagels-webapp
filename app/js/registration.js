@@ -91,7 +91,7 @@ var registration = (function (module) {
 
 		$('#content').on('click', '#registration-submit', function(event){
 			event.preventDefault();
-			registrationValidation();
+			registration.submitRegistration();
 		});
 
 		$('#content').on('submit', '#login-form', function(event){
