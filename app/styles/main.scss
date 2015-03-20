@@ -65,9 +65,9 @@ body {
   }
 
   #logo-font-box {
-    background-image: url("../images/header_bg_med.png");
-    border: 5px solid #C7142A;
-    border-radius: 30px;
+//    background-image: url("../images/header_bg_med.png");
+//    border: 5px solid #C7142A;
+    border-radius: 100px;
     margin: 20px;
     text-align: center;
     padding: 0px 0px 0px 0px;
@@ -81,6 +81,7 @@ body {
   #logo-mini-box {
     padding: 0px 0px 0px 70px;
     margin: 0;
+	font-style: italic;
   }
   #bagel_image {
     text-align: center;
