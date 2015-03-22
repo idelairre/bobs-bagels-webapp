@@ -56,7 +56,9 @@ var registration = (function (module) {
 		localStorage.setItem('authToken', userData.token);
     	localStorage.setItem('customerId', userData.customer_id);
 		console.log('logged in!');
-		window.location.href = '/';
+		window.location.href = '#/home';
+		$('.signed-in').show();
+    $('.signed-out').hide();
 	};
 
 	module.submitLogin = function (event) {
