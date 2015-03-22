@@ -47,7 +47,9 @@ var router = (function (module) {
     logout: function(){
       localStorage.removeItem('authToken');
       localStorage.removeItem('customerId');
-      location.href = '/';
+      $('#content').empty().load('partials/logged_out.html');
+      $('.signed-in').hide();
+      $('.signed-out').show();
     },
 	  registration: function(){
 	    $('#content').empty().load('partials/registration-form.html');
