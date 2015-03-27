@@ -17,8 +17,8 @@
 
 ## Models - ERD (Entity Relationship Diagrams)
 ### Auto generated ERD (generated with the Rails ERD Gem)
+[Rails ERD on rubyforge](http://rails-erd.rubyforge.org)
 ![Models Rails ERD](api_erd.png)
-[Rails ERD](http://rails-erd.rubyforge.org)
 
 ### Whiteboard planning
 ![Models Whiteboard ERD](Models_ERD.JPG)
