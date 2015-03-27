@@ -17,8 +17,8 @@
 
 ## Models - ERD (Entity Relationship Diagrams)
 ### Auto generated ERD (generated with the Rails ERD Gem)
+[Rails ERD on rubyforge](http://rails-erd.rubyforge.org)
 ![Models Rails ERD](api_erd.png)
-[Rails ERD](http://rails-erd.rubyforge.org)
 
 ### Whiteboard planning
 ![Models Whiteboard ERD](Models_ERD.JPG)
@@ -30,6 +30,5 @@
 ![Deployment GitHub Workflow](Deployment_Process.JPG)
 
 ## Project Documentation
-### Google Docs
-[Project Documentation](https://docs.google.com/document/d/1tiphkFy_W58ioYVDvyYR1U1YO5Sptzc-Jd03a2EBRR0/edit?usp=sharing)
+[Project Documentation - Google Docs](https://docs.google.com/document/d/1tiphkFy_W58ioYVDvyYR1U1YO5Sptzc-Jd03a2EBRR0/edit?usp=sharing)
 
