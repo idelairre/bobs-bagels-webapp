@@ -67,11 +67,7 @@
 					</li>
 					<li class="nav_item signed-in"><a href="#/logout">Logout</a>
 					</li>
-
-					<li class="nav_item">
-						<a href="#/cart">
-							<div id="cart"></div>
-						</a>
+					<li class="nav_item"><a href="#/cart"><div id="cart"></div></a>
 					</li>
 					<li class="nav_item"><a href="#/delivery-options">Checkout</a>
 					</li>
@@ -83,11 +79,11 @@
 			<div id='content'></div>
 			<div id='content-2'></div>
 			<div class="footer">
-			<p>~ From Team Turing</p>
-		</div>
+				<p>~ From Team Turing</p>
+			</div>
 		</div>
 
-		
+
 
 		<!-- build:js(.) js/vendor.js -->
 		<!-- bower:js -->
@@ -113,7 +109,7 @@
 		<script src="bower_components/mocha/mocha.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
-		
+
 		<!-- build:js({app,.tmp}) js/main.js -->
 		<script src="js/menu.js" type="text/javascript"></script>
 		<script src="js/router.js" type="text/javascript"></script>
@@ -152,7 +148,7 @@
 								<input type="number" class="form-control" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
 							</label>
 						</div>
-						<h4>Bagel</h4>
+						<h3>Bagel</h3>
 						<div class="form-row">
 							<label>
 								<input type="radio" name="bagel" id="{{bagel.id}}" value="{{bagel.id}}" checked>{{bagel.bagel_type}} {{#each otherBagels}}
@@ -160,13 +156,7 @@
 							</label>
 						</div>
 
-						<div class="form-row">
-							<label>
-								<span>Comments</span>
-								<textarea class="form-control" name="comments" id="{{id}}comments"></textarea>
-							</label>
-						</div>
-						<h4>Extras</h4>
+						<h3>Extras</h3>
 						<div id="{{id}}checks">
 							<div class="form-row">
 								{{#each extras}}
@@ -186,7 +176,13 @@
 								{{/each}}
 							</div>
 						</div>
-						<button class='cart-submit' class="btn" type="submit">Add to Cart</button>
+						<div class="form-row">
+							<label>
+								<span>Comments</span>
+								<textarea class="form-control" name="comments" id="{{id}}comments"></textarea>
+							</label>
+						</div>
+						<button class='cart-submit' class="btn" type="submit"><span class="glyphicon glyphicon-ok-circle"></span> Add to Cart</button>
 					</form>
 				</div>
 				{{/each}}
@@ -199,7 +195,7 @@
 					<h2>Beverages</h2> {{#each drinks}}
 					<div id="item-{{id}}" class="padding-right-20 padding-bottom-20 col-sm-3">
 						<div class="menu-item">
-							<h4 id="{{id}}name">{{name}}</h4>
+							<h3 id="{{id}}name">{{name}}</h3>
 							<span id='{{id}}price'>{{price}}</span>
 						</div>
 						<form class="menu-form" id="{{id}}">
@@ -209,10 +205,10 @@
 									<input type="number" class="form-control" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
 								</label>
 							</div>
-							<button class='cart-submit' type="submit">Add to Cart</button>
+							<button class='cart-submit' type="submit"><span class="glyphicon glyphicon-ok-circle"></span> Add to Cart</button>
 						</form>
 					</div>
-				{{/each}}
+					{{/each}}
 		</script>
 		<script type="text/x-handlebars-template" id='cater-menu'>
 			<h2>"Bob's Bagels will cater your events like a BOSS."</h2>
@@ -235,7 +231,6 @@
 							<input type="radio" name="bagel" id="{{bagel.id}}" value="{{bagel.id}}" checked>{{bagel.bagel_type}} {{#each otherBagels}}
 							<input type="radio" name="bagel" id="{{id}}" value="{{id}}">{{bagel_type}} {{/each}}
 						</label>
-
 					</div>
 					<button class='cart-submit' class="btn" type="submit">Add to Cart</button>
 				</form>
@@ -319,9 +314,7 @@
 				<h4>Taxes: {{taxes}}</h4>
 				<h4>___________________</h4>
 				<h4>Total: {{total}}</h4>
-				<h3>Thank you for buying bagels from us!</h3>
-			{{/data}} 
-		{{/order}}
+				<h3>Thank you for buying bagels from us!</h3> {{/data}} {{/order}}
 		</script>
 
 		<script type="text/x-handlebars-template" id='user-pay-render'>
@@ -395,8 +388,8 @@
 				<br> Zipcode:
 				<input type=text id=user-zipcode-field value="{{address_zipcode}}" />
 				<p>
-				<button id='edit-profile-submit' type="submit">Save Profile</button>
-				<button id='edit-profile-cancel' type="submit">Cancel</button>
+					<button id='edit-profile-submit' type="submit">Save Profile</button>
+					<button id='edit-profile-cancel' type="submit">Cancel</button>
 			</form>
 			{{/user}}
 		</script>
@@ -421,4 +414,5 @@
 			ga('send', 'pageview');
 		</script>
 </body>
+
 </html>
