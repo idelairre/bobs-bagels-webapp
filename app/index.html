@@ -67,7 +67,8 @@
 					</li>
 					<li class="nav_item signed-in"><a href="#/logout">Logout</a>
 					</li>
-					<li class="nav_item"><a href="#/cart"><div id="cart"></div></a>
+					<li class="nav_item"><a href="#/"><div id="cart"></div></a>
+					<!-- disabling link until conditional logic for the detailed cart checkout button is made -->
 					</li>
 					<li class="nav_item"><a href="#/delivery-options">Checkout</a>
 					</li>
@@ -250,7 +251,7 @@
 				<button value="{{id}}" class='remove-cart' id="remove-{{id}}">Remove from Cart</button>
 			</div>
 			{{/each}}
-			<button value="checkout"><a href="#/delivery-options">Checkout</a></button>
+			<button value="checkout"><a href="#/payments">Checkout</a></button> 
 			<div id="content-2"></div>
 		</script>
 		<script type="text/x-handlebars-template" id='order-history-render'>
