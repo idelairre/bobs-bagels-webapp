@@ -16,9 +16,11 @@
 
 
 ## Models - ERD (Entity Relationship Diagrams)
-![Models ERD](Models_ERD.JPG)
+### Final Rails ERD (pdf)
+![Models Rails ERD](api_erd.pdf)
 
-
+### Whiteboard planning
+![Models Whiteboard ERD](Models_ERD.JPG)
 
 ## Initial GitHub Workflow
 ![Initial GitHub Workflow](GitHub_Workflow.jpg)
@@ -27,5 +29,6 @@
 ![Deployment GitHub Workflow](Deployment_Process.JPG)
 
 ## Project Documentation
+### Google Docs
 [Project Documentation](https://docs.google.com/document/d/1tiphkFy_W58ioYVDvyYR1U1YO5Sptzc-Jd03a2EBRR0/edit?usp=sharing)
 
