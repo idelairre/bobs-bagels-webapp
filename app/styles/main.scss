@@ -113,6 +113,14 @@ a:hover {
 	color: black;
 }
 
+#boston {
+	color: black;
+}
+
+#boston:hover {
+	text-decoration: underline;
+}
+
 button {
   background-color: #C7142A;
   color: white;
@@ -126,7 +134,7 @@ button {
 .umph {
   font-family: 'Pacifico', cursive;
   color:#C7142A;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 button:hover {

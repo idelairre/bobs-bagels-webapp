@@ -134,11 +134,12 @@
 
 		<script type="text/x-handlebars-template" id='menu-info'>
 			<div class="row">
+				<h2>Bagels</h2>
 				{{#each products}}
 				<div id="item-{{id}}" class="product-item col-md-5">
 					<div class="menu-item">
 						<h2 id="{{id}}name">{{name}}</h2>
-						<span class="umph" id='{{id}}price'>{{price}}</span>
+						<h2 class="umph" id='{{id}}price'>{{price}}</h2>
 					</div>
 					<p class="umph" id="{{id}}description">{{description}}</p>
 					<form class="menu-form" id="{{id}}">
@@ -192,11 +193,11 @@
 		<script type="text/x-handlebars-template" id='drink-render'>
 			<div class="row">
 				<div class="clearfloat">
-					<h2>Beverages</h2> {{#each drinks}}
+					<h3>Beverages</h3> {{#each drinks}}
 					<div id="item-{{id}}" class="padding-right-20 padding-bottom-20 col-sm-3">
 						<div class="menu-item">
 							<h3 id="{{id}}name">{{name}}</h3>
-							<span id='{{id}}price'>{{price}}</span>
+							<h3 class="umph" id='{{id}}price'>{{price}}</h3>
 						</div>
 						<form class="menu-form" id="{{id}}">
 							<div class="form-row">
