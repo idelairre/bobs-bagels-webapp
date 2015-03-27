@@ -41,8 +41,8 @@
         </div>
       </div>
 
-      <div id="bagel_image" class="col-md-5"><img src="images/bagels_splash.jpg">
-      </div>
+<!--      <div id="bagel_image" class="col-md-5"><img src="images/bagels_splash.jpg">-->
+<!--      </div>-->
 
       <div id="soc_nav_container" class="col-md-3 pull-right">
         <nav id="navsocial">
@@ -73,13 +73,14 @@
   			</li>
         <li class="nav_item signed-in"><a href="#/logout">Logout</a>
         </li>
-  			<li class="nav_item"><a href="#/delivery-options">Checkout</a>
-  			</li>
+  			
         <li class="nav_item">
-            <a href="#/cart">Edit Your Items
+            <a href="#/cart">
               <div id="cart"></div>
             </a>
         </li>
+			<li class="nav_item"><a href="#/delivery-options">Checkout</a>
+  			</li>
 
   		</ul>
 
@@ -339,7 +340,7 @@
   </script>
   </div> <!-- big-border -->
 		<script type="text/x-handlebars-template" id='cart-render'>
-			{{#cart}} Items: {{quantity}} - Base Total: {{total}} {{/cart}}
+			<span class="glyphicon glyphicon-shopping-cart"></span>{{#cart}} Items: {{quantity}} - Base Total: {{total}} {{/cart}}
 		</script>
 
 		<script type="text/x-handlebars-template" id='order-summary-render'>
