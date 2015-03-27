@@ -30,6 +30,5 @@
 ![Deployment GitHub Workflow](Deployment_Process.JPG)
 
 ## Project Documentation
-### Google Docs
-[Project Documentation](https://docs.google.com/document/d/1tiphkFy_W58ioYVDvyYR1U1YO5Sptzc-Jd03a2EBRR0/edit?usp=sharing)
+[Project Documentation - Google Docs](https://docs.google.com/document/d/1tiphkFy_W58ioYVDvyYR1U1YO5Sptzc-Jd03a2EBRR0/edit?usp=sharing)
 
