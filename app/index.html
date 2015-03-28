@@ -27,7 +27,6 @@
 	<!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
 	<div id="big-border">
 		<div class="header">
 			<div id="logo-row" class="row">
@@ -84,8 +83,6 @@
 			</div>
 		</div>
 
-
-
 		<!-- build:js(.) js/vendor.js -->
 		<!-- bower:js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
@@ -132,6 +129,8 @@
 		</script>
 		<script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js">
 		</script>
+		
+		<!-- HANDLEBARS TEMPLATE: MENU INFO -->
 
 		<script type="text/x-handlebars-template" id='menu-info'>
 			<div class="row">
@@ -191,6 +190,8 @@
 			</div>
 		</script>
 
+		<!-- HANDLEBARS TEMPLATE: DRINK RENDER -->
+
 		<script type="text/x-handlebars-template" id='drink-render'>
 			<div class="row">
 				<div class="clearfloat">
@@ -211,7 +212,12 @@
 						</form>
 					</div>
 					{{/each}}
+				</div>
+			</div>
 		</script>
+		
+		<!-- HANDLEBARS TEMPLATE: CATER MENU -->
+				
 		<script type="text/x-handlebars-template" id='cater-menu'>
 			<h2>"Bob's Bagels will cater your events like a BOSS."</h2>
 			<h2> We do bagels the right way. Piping hot, freshly baked, and delivered right to your doorstep. Cater with us to keep any party, corporate event, luncheon, or breakfast popping in a jiffy!</h2> {{#each products}}
@@ -238,9 +244,10 @@
 				</form>
 			</div>
 			{{/each}}
-			</div>
-			</div>
 		</script>
+				
+		<!-- HANDLEBARS TEMPLATE: DETAILED CARD RENDER -->
+				
 		<script type="text/x-handlebars-template" id='detailed-cart-render'>
 			{{#each orderItem}}
 			<div id="cart-{{id}}">
@@ -254,6 +261,9 @@
 			<button value="checkout"><a href="#/payments">Checkout</a></button> 
 			<div id="content-2"></div>
 		</script>
+		
+		<!-- HANDLEBARS TEMPLATE: ORDER HISTORY RENDER -->
+
 		<script type="text/x-handlebars-template" id='order-history-render'>
 			{{#orderHistory}}
 			<h2>Hi {{first_name}}! Thank you for being such a valuable customer. Here is your order history:</h2>
@@ -269,39 +279,77 @@
 			<h4>Total: {{total}}</h4> {{/each}} {{/orderHistory}}
 		</script>
 
-		<!-- HANDLEBARS TEMPLATE: EDIT USER PROFILE -->
+<!--		 HANDLEBARS TEMPLATE: EDIT USER PROFILE -->
 		<script id="user_profile_template" type="text/x-handlebars-template">
 			{{#user}}
 			<div id=user-{{this.id}}>
 				<h2>{{first_name}} {{last_name}}<h2>
-        <h4>Email: {{email}}
-        <h4>Phone Number: {{phone_number}}</h4>
-        <h4>Address 1: {{address_1}}</h4>
-        <h4>Address 2: {{address_2}}<h4>
-        <h4>Zipcode: {{address_zipcode}}</h4>
+				<h4>Email: {{email}}
+				<h4>Phone Number: {{phone_number}}</h4>
+				<h4>Address 1: {{address_1}}</h4>
+				<h4>Address 2: {{address_2}}<h4>
+				<h4>Zipcode: {{address_zipcode}}</h4>
+				<button id=edit-profile-b-{{this.id}} class=edit-profile>Edit Profile</button><br>
+				<br>
+				
+				<form id="edit-profile-form">
+					<div>
+					<label>
+						<span>First Name</span>
+						<input type="text" class="form-control" id=user-first-name-field />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Last Name</span>
+						<input type="text" class="form-control" id=user-last-name-field  />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Email Address</span>
+						<input type="text" class="form-control" id="email" />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Phone</span>
+						<input type="text" class="form-control" id=user-phone-field  />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Address 1</span>
+						<input type="text" class="form-control" id=user-address-1-field />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Address 2</span>
+						<input type="text" class="form-control" id=user-address-2-field />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Zipcode</span>
+						<input type="text" class="form-control" id=user-zipcode-field />
+					</label>
+				</div>
+				<button id='edit-profile-submit' type="submit">Save Profile</button>
+				<button id='edit-profile-cancel' type="submit">Cancel</button>
+			</form>
+    	{{/user}}
+  		</script>
+					
+<!--  </div>  big-border -->
+					
+		<!-- HANDLEBARS TEMPLATE: CART RENDER -->
 
-        <button id=edit-profile-b-{{this.id}} class=edit-profile>Edit Profile</button><br>
-        <br>
-        <form id="edit-profile-form">
-          First Name: <input type=text id=user-first-name-field value="{{first_name}}" /> <br>
-          Last Name: <input type=text id=user-last-name-field value="{{last_name}}" /> <br>
-          Email: <input type=text id=user-email-field value="{{email}}" /> <br>
-          Phone Number: <input type=text id=user-phone-field value="{{phone_number}}" /> <br>
-          Address 1: <input type=text id=user-address-1-field value="{{address_1}}" /> <br>
-          Address 2: <input type=text id=user-address-2-field value="{{address_2}}" /> <br>
-          Zipcode: <input type=text id=user-zipcode-field value="{{address_zipcode}}" /> <p>
-          <br>
-          <button id='edit-profile-submit' type="submit">Save Profile</button>
-          <button id='edit-profile-cancel' type="submit">Cancel</button>
-
-        </form>
-      </div>
-    {{/user}}
-  </script>
-  </div> <!-- big-border -->
 		<script type="text/x-handlebars-template" id='cart-render'>
 			<span class="glyphicon glyphicon-shopping-cart"></span>{{#cart}} Items: {{quantity}} - Base Total: {{total}} {{/cart}}
 		</script>
+					
+		<!-- HANDLEBARS TEMPLATE: ORDER SUMMARY RENDER -->
 
 		<script type="text/x-handlebars-template" id='order-summary-render'>
     	{{#order}}
@@ -319,6 +367,8 @@
 				<h4>Total: {{total}}</h4>
 				<h3>Thank you for buying bagels from us!</h3> {{/data}} {{/order}}
 		</script>
+					
+		<!-- HANDLEBARS TEMPLATE: USER PAY RENDER -->
 
 		<script type="text/x-handlebars-template" id='user-pay-render'>
 			<div>
@@ -360,44 +410,6 @@
 			</form>
 		</script>
 
-		<!-- HANDLEBARS TEMPLATE: EDIT USER PROFILE -->
-		<script id="user_profile_template" type="text/x-handlebars-template">
-			{{#user}}
-			<h1>User Profile:</h1>
-			<div id=user-{{this.id}}>
-				<li>First Name: {{first_name}}</li>
-				<li>Last Name: {{last_name}}</li>
-				<li>Email: {{email}}</li>
-				<li>Phone Number: {{phone_number}}</li>
-				<li>Address 1: {{address_1}}</li>
-				<li>Address 2: {{address_2}}</li>
-				<li>Zipcode: {{address_zipcode}}</li>
-				<button id=edit-profile-b-{{this.id}} class=edit-profile>Edit Profile</button>
-			</div>
-
-			<form id="edit-profile-form">
-				First Name:
-				<input type=text id=user-first-name-field value="{{first_name}}" />
-				<br> Last Name:
-				<input type=text id=user-last-name-field value="{{last_name}}" />
-				<br> Email:
-				<input type=text id=user-email-field value="{{email}}" />
-				<br> Phone Number:
-				<input type=text id=user-phone-field value="{{phone_number}}" />
-				<br> Address 1:
-				<input type=text id=user-address-1-field value="{{address_1}}" />
-				<br> Address 2:
-				<input type=text id=user-address-2-field value="{{address_2}}" />
-				<br> Zipcode:
-				<input type=text id=user-zipcode-field value="{{address_zipcode}}" />
-				<p>
-					<button id='edit-profile-submit' type="submit">Save Profile</button>
-					<button id='edit-profile-cancel' type="submit">Cancel</button>
-			</form>
-			{{/user}}
-		</script>
-
-
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 
 		<script>
@@ -417,5 +429,4 @@
 			ga('send', 'pageview');
 		</script>
 </body>
-
 </html>
