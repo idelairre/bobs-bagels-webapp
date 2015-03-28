@@ -22,6 +22,7 @@ var router = (function (module) {
 			'login': 'login',
 			'catering': 'catering',
 			'my-profile': 'myProfile',
+			'preorder-summary': 'preorderSummary',
 			'order-history': 'orderHistory',
 			'about': 'about',
 			'logout': 'logout',
@@ -39,6 +40,10 @@ var router = (function (module) {
 		payments: function () {
 			$('#content').empty().load('partials/payment-form.html');
 			order.init();
+			
+		},
+		preorderSummary: function () {
+			$('#content').empty().load('partials/preorder-summary.html');
 		},
 		deliveryOptions: function () {
 			$('#content').empty().load('partials/order-time-form.html');
@@ -77,7 +82,8 @@ var router = (function (module) {
 		userPayments: function () {
 			cart.renderDetailedCart();
 			cart.init();
-			$('#content-2').empty().load('partials/user-payment.html');
+//			$('#content-2').empty().load('partials/user-payment.html');
+			// this has been moved to the payment view
 			order.init();
 		},
 
@@ -93,7 +99,6 @@ var router = (function (module) {
 			$('#content').empty().load('partials/about.html');
 		}
 	});
-
 
 	module.router = new Router();
 

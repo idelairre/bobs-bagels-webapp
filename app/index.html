@@ -246,7 +246,7 @@
 			{{/each}}
 		</script>
 				
-		<!-- HANDLEBARS TEMPLATE: DETAILED CARD RENDER -->
+		<!-- HANDLEBARS TEMPLATE: DETAILED CART RENDER -->
 				
 		<script type="text/x-handlebars-template" id='detailed-cart-render'>
 			{{#each orderItem}}
@@ -258,7 +258,7 @@
 				<button value="{{id}}" class='remove-cart' id="remove-{{id}}">Remove from Cart</button>
 			</div>
 			{{/each}}
-			<button value="checkout"><a href="#/payments">Checkout</a></button> 
+			<button id="checkout" value="checkout"><a href="#/preorderSummary">Confirm Order</a></button> 
 			<div id="content-2"></div>
 		</script>
 		
@@ -279,7 +279,8 @@
 			<h4>Total: {{total}}</h4> {{/each}} {{/orderHistory}}
 		</script>
 
-<!--		 HANDLEBARS TEMPLATE: EDIT USER PROFILE -->
+		<!-- HANDLEBARS TEMPLATE: EDIT USER PROFILE -->
+		
 		<script id="user_profile_template" type="text/x-handlebars-template">
 			{{#user}}
 			<div id=user-{{this.id}}>
@@ -349,6 +350,24 @@
 			<span class="glyphicon glyphicon-shopping-cart"></span>{{#cart}} Items: {{quantity}} - Base Total: {{total}} {{/cart}}
 		</script>
 					
+		<!-- HANDLEBARS TEMPLATE: PREORDER SUMMARY RENDER -->
+					
+		<script type="text/x-handlebars-template" id='preorder-summary-render'>
+			<div id="cart-{{id}}">
+				{{#each cart}}
+				<h4>{{name}}: {{price}} (x{{quantity}}) </h4>
+				{{/each}}
+				<h4>Subtotal: {{subtotal}}</h4>
+				<h4>Delivery Cost: {{deliveryCost}}</h4>
+				<h4>Taxes: {{taxes}}</h4>
+				<h4>___________________</h4>
+				<h4>Total: {{total}}</h4>
+				<br>
+			</div>
+			<button type="submit" id="confirm"><a href="#/payments">Checkout</a></button>
+			<br>
+		</script>
+
 		<!-- HANDLEBARS TEMPLATE: ORDER SUMMARY RENDER -->
 
 		<script type="text/x-handlebars-template" id='order-summary-render'>
@@ -370,6 +389,7 @@
 					
 		<!-- HANDLEBARS TEMPLATE: USER PAY RENDER -->
 
+<!--
 		<script type="text/x-handlebars-template" id='user-pay-render'>
 			<div>
 				<h2>Credit Cards</h2> {{#each data}}
@@ -409,6 +429,7 @@
 				<button type="submit" id="submit-card">Submit Card</button>
 			</form>
 		</script>
+-->
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 

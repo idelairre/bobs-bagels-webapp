@@ -22,7 +22,7 @@ var cart = (function (module) {
 
   renderNavCart = function(){
       var data = JSON.parse(localStorage['cart']);
-      data = calcCart(data);
+      data = cart.calcCart(data);
       data.total = accounting.formatMoney(data.total);
       var template = Handlebars.compile($('#cart-render').html());
       $('#cart').html(template({
@@ -69,7 +69,8 @@ var cart = (function (module) {
     renderNavCart();
   };
 
-  var calcCart = function(data){
+  // calcCart is now a module so the preorder summary can use it
+  module.calcCart = function(data){ 
     var total = 0;
     var cart = { total: 0, quantity: 0};
     data.forEach(function(item){
@@ -108,6 +109,41 @@ var cart = (function (module) {
     renderNavCart();
     cart.renderDetailedCart();
   };
+	
+  module.preorderCalcCart = function() {
+	    var bostonZips = ["02210", "02108", "02109", "02110", "02111", "02113", "02203"]
+		var data = JSON.parse(localStorage['cart']);
+	  	
+	  if(bostonZips.indexOf(localStorage["zipcode"]) > -1) {
+			var deliveryCost = 10.00;
+		} else {
+			var deliveryCost = 6.00;
+		}
+	  
+	  var subtotal = (cart.calcCart(data).total + deliveryCost);
+	  var taxes =  (subtotal + deliveryCost) * 0.07;
+	  var total = (subtotal + taxes);
+	  
+	  var formattedTaxes = accounting.formatMoney(taxes);
+	  var formattedTotal = accounting.formatMoney(total);
+	  var formattedSubtotal = accounting.formatMoney(subtotal);
+	  var formattedDeliveryCost = accounting.formatMoney(deliveryCost);
+	  
+	  cart.renderPreorderSummary(formattedTaxes, formattedTotal, formattedSubtotal, formattedDeliveryCost);
+  };
+	
+	module.renderPreorderSummary = function(taxes, total, subtotal, deliveryCost) {
+		var cart = JSON.parse(localStorage['cart']);
+		console.log(cart)
+		var template = Handlebars.compile($('#preorder-summary-render').html());
+        $('#content').html(template({
+          cart: cart,
+		  taxes: taxes,
+		  deliveryCost: deliveryCost,
+		  subtotal: subtotal,
+		  total: total,
+        }));
+	};
 
   module.init = function(){
 
