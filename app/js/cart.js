@@ -47,7 +47,6 @@ var cart = (function (module) {
         data.forEach(function(item){
           cart.cartIngredientRender(item, aLaCart)
         });
-
         var template = Handlebars.compile($('#detailed-cart-render').html());
         $('#content').html(template({
           orderItem: data,
@@ -156,6 +155,12 @@ var cart = (function (module) {
       event.preventDefault();
       removeItem($(this));
     });
+	  
+  	$('#nav-item').on('click', 'a.detailed-cart', function(event){
+		//stuff goes here
+		console.log("clicked");
+		$('#content').empty();
+	});
 
     emptyCartNormalize();
     renderNavCart();

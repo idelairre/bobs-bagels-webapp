@@ -19,6 +19,7 @@ var router = (function (module) {
 			'payments': 'payments',
 			'delivery-options': 'deliveryOptions',
 			'registration': 'registration',
+			'detailed-cart': 'detailedCart',
 			'login': 'login',
 			'catering': 'catering',
 			'my-profile': 'myProfile',
@@ -49,9 +50,14 @@ var router = (function (module) {
 			$('#content').empty().load('partials/order-time-form.html');
 			order.init();
 		},
+		detailedCart: function () {
+			$('#content').empty().load('partials/detailed-cart.html');
+			cart.renderDetailedCart();
+			cart.init
+		},
 		logout: function () {
 			localStorage.removeItem('authToken');
-			localStorage.removeItem('customerId');
+//			localStorage.removeItem('customerId');
 			$('#content').empty().load('partials/logged_out.html');
 			$('.signed-in').hide();
 			$('.signed-out').show();
