@@ -1,15 +1,5 @@
 var payment = (function (module) {
 
-//	module.getReturnCustomerStatus = function (response) {
-//		if (response.data.length != 0) {
-//			console.log("user is a baws");
-//			return true;
-//		} else {
-//			console.log("you don't wanna know what the user is");
-//			return false;
-//		}
-//	};
-
 	module.paymentType = function () {
 		if ((localStorage['customerId'] == undefined) || (localStorage['customerId'] == "undefined") || (localStorage['customerId'] == null)) {
 			location.href = '/#/payments';
