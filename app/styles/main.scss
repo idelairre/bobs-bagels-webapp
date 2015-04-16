@@ -100,20 +100,45 @@ body {
   padding-bottom: 30px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  width: 1140px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+#boston {
+	color: black;
+}
+
+#boston:hover {
+	text-decoration: underline;
 }
 
 button {
   background-color: #C7142A;
-  color:white;
+  color: white;
   border: 3px solid #2D365A;
-  border-radius: 30px;
+  border-radius: 20px;
+  margin-top: 10px;
   padding: 10px;
+  font-family: 'Pacifico', cursive;
 }
 
 .umph {
   font-family: 'Pacifico', cursive;
   color:#C7142A;
-  font-size: 18px;
+  font-size: 22px;
+}
+
+button:hover {
+	color: black;
 }
 
 #delivery-submit {

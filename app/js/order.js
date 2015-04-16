@@ -111,6 +111,7 @@ var order = (function (module) {
     if ((data.data.type == "delivery") || (data.data.type == "pickup")){
       items.forEach(function(item){
         cart.cartIngredientRender(item, aLaCart);
+		console.log()  
     });
     } else {
       items.forEach(function(item){
@@ -125,33 +126,48 @@ var order = (function (module) {
   };
 
   module.init = function(){
-    $('#content').on('click', '#delivery', function(event){
-      event.preventDefault();
+    $('#content').on('click', '#delivery', function(){
       $('#delivery-add').empty().load('partials/delivery-address-form.html');
     });
 
-    $('#content').on('click', '#pickup', function(event){
-      event.preventDefault();
+    $('#content').on('click', '#pickup', function(){
+	//      event.preventDefault();
       $('#delivery-add').empty();
     });
 
   $('#content').on('click', '#delivery-submit', function(event){
-      event.preventDefault();
+//      event.preventDefault();
       deliveryValidation();
-	  // cart.renderDetailedCart();
+	  console.log("clicked");
+  });
+	  
+ $('#content').on('click', '#confirm', function(event){
+	 // stuff goes here
+ });
+	  
+  $('#content').on('click', '#checkout', function(event){	  
+	  $('#content').empty();
+	  
+	  console.log("checkout button clicked");
+	  cart.preorderCalcCart();
+	  
   });
 
   $('#content').unbind('submit').bind('submit', '#payment-form', function(event){
       event.preventDefault();
+	  console.log("also clicked");
       payment.cardPay();
   });
 
-	$('#content').on('click', '#user-pay', function(event){
+  $('#content').on('click', '#user-pay', function(event){
 		event.preventDefault();
+	  	console.log("also clicked");
 		order.submitOrder();
-  	});
+  });
+	  
   $('#content').on('click', '#decline', function(event){
     event.preventDefault();
+	console.log("also clicked");
     location.href = "/#/payments";
     });
   };
