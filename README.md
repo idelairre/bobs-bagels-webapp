@@ -1,6 +1,11 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
-# Team Turing, Project 2: Bob's Bagels
+# GA WDI
+
+## Bob's Bagels - Group project with Nicole, Ian, Max & Brandon
+- html, css, jquery, javascript, bootstrap, handlebars, json, ajax, ruby on rails api
+- Front End deployed to GitHub Pages: http://bagelsbybob.github.io/bobs-bagels-webapp
+- Back End API server deployed to Heroku: http://bobs-bagels-api.herokuapp.com/products
 
 ## Client Requirements
 - menu must be visible on the site
@@ -17,7 +22,7 @@
 
 ## Models - ERD (Entity Relationship Diagrams)
 ### Auto generated ERD (generated with the Rails ERD Gem)
-[Rails ERD on rubyforge](http://rails-erd.rubyforge.org)
+Diagram generated with [Rails ERD](http://rails-erd.rubyforge.org)
 ![Models Rails ERD](api_erd.png)
 
 ### Whiteboard planning
