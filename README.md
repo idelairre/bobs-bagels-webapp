@@ -3,7 +3,7 @@
 # GA WDI
 
 ## Bob's Bagels - Group project with Nicole, Ian, Max & Brandon
-- html, css, jquery, javascript, bootstrap, handlebars, backbone, json, ajax, ruby on rails api
+- html, css, jquery, javascript, bootstrap, handlebars, backbone, json, ajax, stripe api, ruby on rails api
 - Front End deployed to GitHub Pages: http://bagelsbybob.github.io/bobs-bagels-webapp
 - Back End API server deployed to Heroku: http://bobs-bagels-api.herokuapp.com/products
 
