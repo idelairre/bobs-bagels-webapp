@@ -1,251 +1,247 @@
-<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>bobs bagels app</title> <meta name=description content=""> <meta name=viewport content="width=device-width"> <link rel="shortcut icon" href=/6905a47e.favicon.ico> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel=stylesheet href=styles/c0c76c78.vendor.css> <link rel=stylesheet href=styles/8533f2a4.main.css> <script src=js/vendor/fbe20327.modernizr.js></script> <!-- Google Font --> <link href="http://fonts.googleapis.com/css?family=Pacifico" rel=stylesheet type=text/css>  <body> <!--[if lt IE 10]>
+<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>bobs bagels app</title> <meta name=description content=""> <meta name=viewport content="width=device-width"> <link rel="shortcut icon" href=/59c8f4b9.favicon.ico> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel=stylesheet href=styles/c0c76c78.vendor.css> <link rel=stylesheet href=styles/ab481a80.main.css> <script src=js/vendor/fbe20327.modernizr.js></script> <!-- Google Font --> <link href="http://fonts.googleapis.com/css?family=Pacifico" rel=stylesheet type=text/css>  <body> <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]--> <div id=big-border> <div class=header> <div id=logo-row class=row> <div id=logo-font-box class="col-md-3 floatleft"> <h1> Bob's<br>Bagels </h1> <div id=logo-mini-box> <h5>since 1951</h5> </div> </div> <div id=bagel_image class=col-md-5><img src=images/cf7a9d0c.bagels_splash.jpg> </div> <div id=soc_nav_container class="col-md-3 pull-right"> <nav id=navsocial> <a href=# class=rss>RSS</a> <a href=# class=facebook>Facebook</a> <a href=# class=twitter>Twitter</a> <a href=# class=gmail>Gmail</a> </nav> </div> </div> <!-- row --> <div id=navbar class=pull-right> <!-- <ul class="nav nav-pills pull-right"> --> <ul id=nav class="nav nav-pills"> <li class=nav_item><a href=#>Home</a> </li> <li class=nav_item><a href=#/about>About</a> </li> <li class=nav_item><a href=#/catering>Catering</a> </li> <li class="nav_item signed-in"><a href=#/order-history>Order History</a> </li> <li class="nav_item signed-in"><a href=#/my-profile>My Profile</a> </li> <li class="nav_item signed-out"><a href=#/registration>Sign Up</a> </li> <li class="nav_item signed-out"><a href=#/login>Login</a> </li> <li class="nav_item signed-in"><a href=#/logout>Logout</a> </li> <li class=nav_item><a href=#/delivery-options>Checkout</a> </li> <li class=nav_item> <a href=#/cart>Edit Your Items <div id=cart></div> </a> </li> </ul> </div> </div> <div class=container> <div id=content></div> <div id=content-2></div> </div> <div class=footer> <p>~ From Team Turing</p> </div> <script src=js/0d820941.vendor.js></script> <script src=js/da9cdc22.main.js></script> <script type=text/javascript src="https://js.stripe.com/v2/"></script> <script type=text/javascript src=http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js></script> <script type=text/javascript src=http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js></script> <script type=text/javascript src=http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js></script> <script type=text/javascript src=http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js></script> <script type=text/x-handlebars-template id=menu-info><div class="row">
-    {{#each products}}
-      <div id="item-{{id}}" class="product-item col-md-5">
-        <div class="menu-item">
-          <h2 id="{{id}}name">{{name}}</h2>
-          <span class="umph" id='{{id}}price'>{{price}}</span>
-        </div>
-        <p class="umph" id="{{id}}description">{{description}}</p>
-        <form class="menu-form" id="{{id}}">
-          <div class="form-row">
-            <label>
-              <span>Quantity</span>
-              <input type="number" class="form-control" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
-            </label>
-          </div>
-          <h4>Bagel</h4>
-          <div class="form-row">
-            <label>
-                <input type="radio"  name="bagel" id="{{bagel.id}}" value="{{bagel.id}}" checked>{{bagel.bagel_type}}
-                {{#each otherBagels}}
-                  <input type="radio" name="bagel" id="{{id}}" value="{{id}}">{{bagel_type}}
-                {{/each}}
-            </label>
+    <![endif]--> <div id=big-border> <div class=header> <div id=logo-row class=row> <div id=logo-font-box class="col-md-3 floatleft"> <h1>Bob's<br>Bagels</h1> <div id=logo-mini-box> <h5>since 1951</h5> </div> </div> <div id=soc_nav_container class="col-md-3 pull-right"> <nav id=navsocial> <a href=# class=rss>RSS</a> <a href=# class=facebook>Facebook</a> <a href=# class=twitter>Twitter</a> <a href=# class=gmail>Gmail</a> </nav> </div> </div> <!-- row --> <div id=navbar class=pull-right> <!-- <ul class="nav nav-pills pull-right"> --> <ul id=nav class="nav nav-pills"> <li class=nav_item><a href=#>Home</a> </li> <li class=nav_item><a href=#/about>About</a> </li> <li class=nav_item><a href=#/catering>Catering</a> </li> <li class="nav_item signed-in"><a href=#/order-history>Order History</a> </li> <li class="nav_item signed-in"><a href=#/my-profile>My Profile</a> </li> <li class="nav_item signed-out"><a href=#/registration>Sign Up</a> </li> <li class="nav_item signed-out"><a href=#/login>Login</a> </li> <li class="nav_item signed-in"><a href=#/logout>Logout</a> </li> <li class=nav_item><a class=detailed-cart href=#/detailedCart><div id=cart></div></a> </li> <li class=nav_item><a href=#/delivery-options>Checkout</a> </li> </ul> </div> </div> <div class=container> <div id=content></div> <div id=content-2></div> <div class=footer> <p>~ From Team Turing</p> </div> </div> <script src=js/ff512171.vendor.js></script> <script src=js/22ae4634.main.js></script> <script type=text/javascript src="https://js.stripe.com/v2/"></script> <script type=text/javascript src=http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js></script> <script type=text/javascript src=http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js></script> <script type=text/javascript src=http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js></script> <script type=text/javascript src=http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js></script> <!-- HANDLEBARS TEMPLATE: MENU INFO --> <script type=text/x-handlebars-template id=menu-info><div class="row">
+				<h2>Bagels</h2>
+				{{#each products}}
+				<div id="item-{{id}}" class="product-item col-md-5">
+					<div class="menu-item">
+						<h2 id="{{id}}name">{{name}}</h2>
+						<h2 class="umph" id='{{id}}price'>{{price}}</h2>
+					</div>
+					<p class="umph" id="{{id}}description">{{description}}</p>
+					<form class="menu-form" id="{{id}}">
+						<div class="form-row">
+							<label>
+								<span>Quantity</span>
+								<input type="number" class="form-control" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
+							</label>
+						</div>
+						<h3>Bagel</h3>
+						<div class="form-row">
+							<label>
+								<input type="radio" name="bagel" id="{{bagel.id}}" value="{{bagel.id}}" checked>{{bagel.bagel_type}} {{#each otherBagels}}
+								<input type="radio" name="bagel" id="{{id}}" value="{{id}}">{{bagel_type}} {{/each}}
+							</label>
+						</div>
 
-          </div>
-
-          <div class="form-row">
-            <label>
-              <span>Comments</span>
-              <textarea class="form-control" name="comments" id="{{id}}comments"></textarea>
-            </label>
-          </div>
-          <h4>Extras</h4>
-          <div id="{{id}}checks">
-          <div class="form-row">
-            {{#each extras}}
-               <label>
-                  <span>{{name}}</span>
-                  <input name="ingredients" type="checkbox" value="{{id}}">
-              </label>
-            {{/each}}
-          </div>
-          <h4>Removies</h4>
-          <div class="form-row">
-            {{#each ingredients}}
-              <label>
-                <span>{{name}}</span>
-                <input class="remove" name="ingredients" type="checkbox" value="{{id}}" checked>
-              </label>
-            {{/each}}
-          </div>
-          </div>
-
-          <button class='cart-submit' class="btn" type="submit" >Add to Cart</button>
-
-        </form>
-      </div>
-    {{/each}}
-    </div></script> <script type=text/x-handlebars-template id=drink-render><div class="row">
-    <div class="clearfloat">
-    <h2>Beverages</h2>
-
-    {{#each drinks}}
-      <div id="item-{{id}}" class="padding-right-20 padding-bottom-20 col-sm-3">
-        <div class="menu-item">
-          <h4 id="{{id}}name">{{name}}</h4>
-          <span id='{{id}}price'>{{price}}</span>
-        </div>
-        <form class="menu-form" id="{{id}}">
-          <div class="form-row">
-            <label>
-              <span>Quantity</span>
-              <input type="number" class="form-control" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
-            </label>
-          </div>
-          <button class='cart-submit' type="submit" >Add to Cart</button>
-        </form>
-      </div>
-    {{/each}}</script> <script type=text/x-handlebars-template id=cater-menu><h2>"Bob's Bagels will cater your events like a BOSS."</h2>
-    <h2> We do bagels the right way. Piping hot, freshly baked, and delivered right to your doorstep. Cater with us to keep any party, corporate event, luncheon, or breakfast popping in a jiffy!</h2>
-    {{#each products}}
-      <div id="item-{{id}}">
-        <div class="menu-item">
-          <h4 id="{{id}}name">{{name}}</h4>
-          <span id='{{id}}price'>${{price}}</span>
-        </div>
-        <form class="menu-form" id="{{id}}">
-          <div class="form-row">
-            <label>
-              <span>Quantity</span>
-              <input type="number" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
-            </label>
-          </div>
-          <p>Bagel</p>
-          <div class="form-row">
-            <label>
-                <input type="radio" name="bagel" id="{{bagel.id}}" value="{{bagel.id}}" checked>{{bagel.bagel_type}}
-                {{#each otherBagels}}
-                  <input type="radio" name="bagel" id="{{id}}" value="{{id}}">{{bagel_type}}
-                {{/each}}
-            </label>
-
-          </div>
-          <button class='cart-submit' class="btn" type="submit" >Add to Cart</button>
-        </form>
-      </div>
-    {{/each}}
-    </div>
-    </div></script> <script type=text/x-handlebars-template id=detailed-cart-render>{{#each orderItem}}
-        <div id="cart-{{id}}">
-          <h2>{{name}} (x{{quantity}})</h2>
-          <h3>{{price}} - {{description}}</h3>
-          <h4>Ingredients: {{#each ingredients}} {{name}} {{/each}}</h4>
-          <br>
-          <button value="{{id}}" class='remove-cart' id="remove-{{id}}">Remove from Cart</button>
-        </div>
-      {{/each}}
-      <div id="content-2"></div></script> <script type=text/x-handlebars-template id=order-history-render>{{#orderHistory}}
-      <h2>Hi {{first_name}}! Thank you for being such a valuable customer. Here is your order history:</h2>
-        <br>
-        {{#each orders}}
-          <h3>Order Id: {{id}} created on {{created_at}}</h3>
-          <br>
-          {{#each cart}}
-            <h4>{{name}}: {{price}}     (x{{quantity}})</h4>
-          {{/each}}
-          <h4>Delivery Cost: {{delivery_cost}}</h4>
-          <h4>Extra Ingredients: {{extras}}</h4>
-          <h4>Subtotal: {{subtotal}}</h4>
-          <h4>Taxes: {{taxes}}</h4>
-          <h4>___________________</h4>
-          <h4>Total: {{total}}</h4>
-        {{/each}}
-      {{/orderHistory}}</script> <!-- HANDLEBARS TEMPLATE: EDIT USER PROFILE --> <script id=user_profile_template type=text/x-handlebars-template>{{#user}}
-      <div id=user-{{this.id}}>
-        <h2>{{first_name}} {{last_name}}<h2>
-        <h4>Email: {{email}}
-        <h4>Phone Number: {{phone_number}}</h4>
-        <h4>Address 1: {{address_1}}</h4>
-        <h4>Address 2: {{address_2}}<h4>
-        <h4>Zipcode: {{address_zipcode}}</h4>
-
-        <button id=edit-profile-b-{{this.id}} class=edit-profile>Edit Profile</button><br>
-        <br>
-        <form id="edit-profile-form">
-          First Name: <input type=text id=user-first-name-field value="{{first_name}}" /> <br>
-          Last Name: <input type=text id=user-last-name-field value="{{last_name}}" /> <br>
-          Email: <input type=text id=user-email-field value="{{email}}" /> <br>
-          Phone Number: <input type=text id=user-phone-field value="{{phone_number}}" /> <br>
-          Address 1: <input type=text id=user-address-1-field value="{{address_1}}" /> <br>
-          Address 2: <input type=text id=user-address-2-field value="{{address_2}}" /> <br>
-          Zipcode: <input type=text id=user-zipcode-field value="{{address_zipcode}}" /> <p>
-          <br>
-          <button id='edit-profile-submit' type="submit">Save Profile</button>
-          <button id='edit-profile-cancel' type="submit">Cancel</button>
-
-        </form>
-      </div>
-    {{/user}}</script> </div> <!-- big-border --> <script type=text/x-handlebars-template id=cart-render>{{#cart}} Items: {{quantity}} - Base Total: {{total}} {{/cart}}</script> <script type=text/x-handlebars-template id=order-summary-render>{{#order}}
-      {{#data}}
+						<h3>Extras</h3>
+						<div id="{{id}}checks">
+							<div class="form-row">
+								{{#each extras}}
+								<label>
+									<span>{{name}}</span>
+									<input name="ingredients" type="checkbox" value="{{id}}">
+								</label>
+								{{/each}}
+							</div>
+							<h3>Removies</h3>
+							<div class="form-row">
+								{{#each ingredients}}
+								<label>
+									<span>{{name}}</span>
+									<input class="remove" name="ingredients" type="checkbox" value="{{id}}" checked>
+								</label>
+								{{/each}}
+							</div>
+						</div>
+						<div class="form-row">
+							<label>
+								<span>Comments</span>
+								<textarea class="form-control" name="comments" id="{{id}}comments"></textarea>
+							</label>
+						</div>
+						<button class='cart-submit' class="btn" type="submit"><span class="glyphicon glyphicon-ok-circle"></span> Add to Cart</button>
+					</form>
+				</div>
+				{{/each}}
+			</div></script> <!-- HANDLEBARS TEMPLATE: DRINK RENDER --> <script type=text/x-handlebars-template id=drink-render><div class="row">
+				<div class="clearfloat">
+					<h3>Beverages</h3> {{#each drinks}}
+					<div id="item-{{id}}" class="padding-right-20 padding-bottom-20 col-sm-3">
+						<div class="menu-item">
+							<h3 id="{{id}}name">{{name}}</h3>
+							<h3 class="umph" id='{{id}}price'>{{price}}</h3>
+						</div>
+						<form class="menu-form" id="{{id}}">
+							<div class="form-row">
+								<label>
+									<span>Quantity</span>
+									<input type="number" class="form-control" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
+								</label>
+							</div>
+							<button class='cart-submit' type="submit"><span class="glyphicon glyphicon-ok-circle"></span> Add to Cart</button>
+						</form>
+					</div>
+					{{/each}}
+				</div>
+			</div></script> <!-- HANDLEBARS TEMPLATE: CATER MENU --> <script type=text/x-handlebars-template id=cater-menu><h2>"Bob's Bagels will cater your events like a BOSS."</h2>
+			<h2> We do bagels the right way. Piping hot, freshly baked, and delivered right to your doorstep. Cater with us to keep any party, corporate event, luncheon, or breakfast popping in a jiffy!</h2> {{#each products}}
+			<div id="item-{{id}}">
+				<div class="menu-item">
+					<h4 id="{{id}}name">{{name}}</h4>
+					<span id='{{id}}price'>${{price}}</span>
+				</div>
+				<form class="menu-form" id="{{id}}">
+					<div class="form-row">
+						<label>
+							<span>Quantity</span>
+							<input type="number" name="quantity" id="{{id}}quantity" min="1" max="100" step="1" value="1">
+						</label>
+					</div>
+					<p>Bagel</p>
+					<div class="form-row">
+						<label>
+							<input type="radio" name="bagel" id="{{bagel.id}}" value="{{bagel.id}}" checked>{{bagel.bagel_type}} {{#each otherBagels}}
+							<input type="radio" name="bagel" id="{{id}}" value="{{id}}">{{bagel_type}} {{/each}}
+						</label>
+					</div>
+					<button class='cart-submit' class="btn" type="submit">Add to Cart</button>
+				</form>
+			</div>
+			{{/each}}</script> <!-- HANDLEBARS TEMPLATE: DETAILED CART RENDER --> <script type=text/x-handlebars-template id=detailed-cart-render>{{#each orderItem}}
+			<div id="cart-{{id}}">
+				<h2>{{name}} (x{{quantity}})</h2>
+				<h3>{{price}} - {{description}}</h3>
+				<h4>Ingredients: {{#each ingredients}} {{name}} {{/each}}</h4>
+				<br>
+				<button value="{{id}}" class='remove-cart' id="remove-{{id}}">Remove from Cart</button>
+			</div>
+			{{/each}}
+			<button id="checkout" value="checkout"><a href="#/preorderSummary">Confirm Order</a></button> 
+			<div id="content-2"></div></script> <!-- HANDLEBARS TEMPLATE: ORDER HISTORY RENDER --> <script type=text/x-handlebars-template id=order-history-render>{{#orderHistory}}
+			<h2>Hi {{first_name}}! Thank you for being such a valuable customer. Here is your order history:</h2>
+			<br> {{#each orders}}
+			<h3>Order Id: {{id}} created on {{created_at}}</h3>
+			<br> {{#each cart}}
+			<h4>{{name}}: {{price}}     (x{{quantity}})</h4> {{/each}}
+			<h4>Delivery Cost: {{delivery_cost}}</h4>
+			<h4>Extra Ingredients: {{extras}}</h4>
+			<h4>Subtotal: {{subtotal}}</h4>
+			<h4>Taxes: {{taxes}}</h4>
+			<h4>___________________</h4>
+			<h4>Total: {{total}}</h4> {{/each}} {{/orderHistory}}</script> <!-- HANDLEBARS TEMPLATE: EDIT USER PROFILE --> <script id=user_profile_template type=text/x-handlebars-template>{{#user}}
+			<div id=user-{{this.id}}>
+				<h2>{{first_name}} {{last_name}}<h2>
+				<h4>Email: {{email}}
+				<h4>Phone Number: {{phone_number}}</h4>
+				<h4>Address 1: {{address_1}}</h4>
+				<h4>Address 2: {{address_2}}<h4>
+				<h4>Zipcode: {{address_zipcode}}</h4>
+				<button id=edit-profile-b-{{this.id}} class=edit-profile>Edit Profile</button><br>
+				<br>
+				
+				<form id="edit-profile-form">
+					<div>
+					<label>
+						<span>First Name</span>
+						<input type="text" class="form-control" id=user-first-name-field />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Last Name</span>
+						<input type="text" class="form-control" id=user-last-name-field  />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Email Address</span>
+						<input type="text" class="form-control" id="email" />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Phone</span>
+						<input type="text" class="form-control" id=user-phone-field  />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Address 1</span>
+						<input type="text" class="form-control" id=user-address-1-field />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Address 2</span>
+						<input type="text" class="form-control" id=user-address-2-field />
+					</label>
+				</div>
+				<div class="form-row">
+					<label>
+						<span>Zipcode</span>
+						<input type="text" class="form-control" id=user-zipcode-field />
+					</label>
+				</div>
+				<button id='edit-profile-submit' type="submit">Save Profile</button>
+				<button id='edit-profile-cancel' type="submit">Cancel</button>
+			</form>
+    	{{/user}}</script> <!--  </div>  big-border --> <!-- HANDLEBARS TEMPLATE: CART RENDER --> <script type=text/x-handlebars-template id=cart-render><span class="glyphicon glyphicon-shopping-cart"></span>{{#cart}} Items: {{quantity}} - Base Total: {{total}} {{/cart}}</script> <!-- HANDLEBARS TEMPLATE: PREORDER SUMMARY RENDER --> <script type=text/x-handlebars-template id=preorder-summary-render><div id="cart-{{id}}">
+				{{#each cart}}
+				<h4>{{name}}: {{price}} (x{{quantity}}) </h4>
+				{{/each}}
+				<h4>Subtotal: {{subtotal}}</h4>
+				<h4>Delivery Cost: {{deliveryCost}}</h4>
+				<h4>Taxes: {{taxes}}</h4>
+				<h4>___________________</h4>
+				<h4>Total: {{total}}</h4>
+				<br>
+			</div>
+			<button type="submit" id="confirm"><a href="#/payments">Checkout</a></button>
+			<br></script> <!-- HANDLEBARS TEMPLATE: ORDER SUMMARY RENDER --> <script type=text/x-handlebars-template id=order-summary-render>{{#order}}
+      		{{#data}}
 			<h2>Congratulations on making an order!</h2>
-			<br>
-			    <h3>Order Id: {{id}} created on {{created_at}}</h3>
-          <br>
-          {{#each cart}}
-            <h4>{{name}}: {{price}}     (x{{quantity}})</h4>
-          {{/each}}
-          <h4>Delivery Cost: {{delivery_cost}}</h4>
-          <h4>Extra Ingredients: {{extras}}</h4>
-          <h4>Subtotal: {{subtotal}}</h4>
-          <h4>Taxes: {{taxes}}</h4>
-          <h4>___________________</h4>
-          <h4>Total: {{total}}</h4>
-			<h3>Thank you for buying bagels from us!</h3> {{/data}} {{/order}}</script> <script type=text/x-handlebars-template id=user-pay-render><div>
-        <h2>Credit Cards</h2>
-				{{#each data}}
-					<h4>expiration date: {{exp_month}}/{{exp_year}}</h4>
-					<h4>type: {{type}}</h4>
-					<h4>card number: **** **** **** {{last4}}</h4>
+				<br>
+				<h3>Order Id: {{id}} created on {{created_at}}</h3>
+				<br> {{#each cart}}
+				<h4>{{name}}: {{price}}     (x{{quantity}})</h4> {{/each}}
+				<h4>Delivery Cost: {{delivery_cost}}</h4>
+				<h4>Extra Ingredients: {{extras}}</h4>
+				<h4>Subtotal: {{subtotal}}</h4>
+				<h4>Taxes: {{taxes}}</h4>
+				<h4>___________________</h4>
+				<h4>Total: {{total}}</h4>
+				<h3>Thank you for buying bagels from us!</h3> {{/data}} {{/order}}</script> <!-- HANDLEBARS TEMPLATE: USER PAY RENDER --> <!--
+		<script type="text/x-handlebars-template" id='user-pay-render'>
+			<div>
+				<h2>Credit Cards</h2> {{#each data}}
+				<h4>expiration date: {{exp_month}}/{{exp_year}}</h4>
+				<h4>type: {{type}}</h4>
+				<h4>card number: **** **** **** {{last4}}</h4>
 				<button type="submit" id="delete_card">delete this card</button>
 				{{/each}}
-				</br>
 			</div>
-      <br>
-      <h2>New Card?</h2>
+			<br>
+			<h2>New Card?</h2>
 
-      <form id="add-card-form">
-        <span class="payment-errors"></span>
-          <div class="form-row">
-            <label>
-              <span>Card Number</span>
-              <input type="text" class="form-control" size="20" id="number" />
-            </label>
-          </div>
-          <div class="form-row">
-            <label>
-              <span>CVC</span>
-              <input type="text" class="form-control" size="4" id="cvc" />
-            </label>
-          </div>
-          <div class="form-group">
-            <label>
-              <span>Expiration (MM)</span>
-              <input type="text" class="form-control" size="2" id="exp-month" />
-            </label>
-            <label>
-              <span>(YYYY)</span>
-                <input type="text" size="4" class="form-control" id="exp-year" />
-            </label>
-          </div>
-          <button type="submit" id="submit-card">Submit Card</button>
-      </form></script> <!-- HANDLEBARS TEMPLATE: EDIT USER PROFILE --> <script id=user_profile_template type=text/x-handlebars-template>{{#user}}
-			<h1>User Profile:</h1>
-			<div id=user-{{this.id}}>
-					<li>First Name: {{first_name}}</li>
-					<li>Last Name: {{last_name}}</li>
-					<li>Email: {{email}}</li>
-					<li>Phone Number: {{phone_number}}</li>
-					<li>Address 1: {{address_1}}</li>
-					<li>Address 2: {{address_2}}</li>
-					<li>Zipcode: {{address_zipcode}}</li>
-				<button id=edit-profile-b-{{this.id}} class=edit-profile>Edit Profile</button>
+			<form id="add-card-form">
+				<span class="payment-errors"></span>
+				<div class="form-row">
+					<label>
+						<span>Card Number</span>
+						<input type="text" class="form-control" size="20" id="number" />
+					</label>
 				</div>
-
-				<form id="edit-profile-form">
-					First Name:
-					<input type=text id=user-first-name-field value="{{first_name}}" />
-					<br> Last Name:
-					<input type=text id=user-last-name-field value="{{last_name}}" />
-					<br> Email:
-					<input type=text id=user-email-field value="{{email}}" />
-					<br> Phone Number:
-					<input type=text id=user-phone-field value="{{phone_number}}" />
-					<br> Address 1:
-					<input type=text id=user-address-1-field value="{{address_1}}" />
-					<br> Address 2:
-					<input type=text id=user-address-2-field value="{{address_2}}" />
-					<br> Zipcode:
-					<input type=text id=user-zipcode-field value="{{address_zipcode}}" />
-					<p>
-
-						<button id='edit-profile-submit' type="submit">Save Profile</button>
-						<button id='edit-profile-cancel' type="submit">Cancel</button>
-
-				</form>
-			{{/user}}</script> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> <script>(function (b, o, i, l, e, r) {
+				<div class="form-row">
+					<label>
+						<span>CVC</span>
+						<input type="text" class="form-control" size="4" id="cvc" />
+					</label>
+				</div>
+				<div class="form-group">
+					<label>
+						<span>Expiration (MM)</span>
+						<input type="text" class="form-control" size="2" id="exp-month" />
+					</label>
+					<label>
+						<span>(YYYY)</span>
+						<input type="text" size="4" class="form-control" id="exp-year" />
+					</label>
+				</div>
+				<button type="submit" id="submit-card">Submit Card</button>
+			</form>
+		</script>
+--> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. --> <script>(function (b, o, i, l, e, r) {
 				b.GoogleAnalyticsObject = l;
 				b[l] || (b[l] =
 					function () {
@@ -258,4 +254,4 @@
 				r.parentNode.insertBefore(e, r)
 			}(window, document, 'script', 'ga'));
 			ga('create', 'UA-XXXXX-X');
-			ga('send', 'pageview');</script>  
+			ga('send', 'pageview');</script> </div> 
